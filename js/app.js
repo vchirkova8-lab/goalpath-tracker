@@ -236,7 +236,7 @@
       html += '<div class="empty"><div class="empty__ico">🎯</div><div class="empty__title">Целей пока нет</div>' +
         '<div class="empty__text">Создайте первую цель и разбейте её на этапы — прогресс будет считаться сам.</div></div>';
       el.innerHTML = html;
-      el.querySelector('#btn-new-goal').addEventListener('click', openGoalForm);
+      el.querySelector('#btn-new-goal').addEventListener('click', function () { openGoalForm(); });
       return;
     }
 
@@ -275,7 +275,7 @@
     }).join('');
 
     el.innerHTML = html;
-    el.querySelector('#btn-new-goal').addEventListener('click', openGoalForm);
+    el.querySelector('#btn-new-goal').addEventListener('click', function () { openGoalForm(); });
     el.querySelectorAll('[data-stage]').forEach(function (b) {
       b.addEventListener('click', function () {
         toggleStage(b.dataset.goal, b.dataset.stage);
